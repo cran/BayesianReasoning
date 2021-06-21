@@ -1,6 +1,13 @@
-# README
+# BayesianReasoning 0.3.3
 
-### v0.3.2 Clean up, test, rinse and repeat
+Minor update  
+
+* x axis labels should always be equally spaced #37
+* Update tests to work with upcoming ggplot2 #42
+* Add default parameters to avoid errors #43
+* Fix LazyData NOTE
+
+# BayesianReasoning 0.3.2
 
 Clean up old comments, add more tests...
 
@@ -11,7 +18,7 @@ Clean up old comments, add more tests...
 * Tweaked color palette for PPV
 
 
-### v0.3.1 Testing, testing
+# BayesianReasoning 0.3.1
 
 Corrected issues raised in CRAN revision
 
@@ -28,7 +35,7 @@ Added tests
 
 
 
-### v0.3.0 It, works?
+# BayesianReasoning 0.3.0
 
 Global clean-up
 
@@ -36,14 +43,14 @@ Global clean-up
 * PPV and NPV working
 * Passes all CRAN checks
 
-### v0.2.0 Somehow, sometimes works
+# BayesianReasoning 0.2.0
 
 Some improvements to stability
 
 * Overlay works better
 * Shiny app working
 
-### v0.1.0 It barely works  
+# BayesianReasoning 0.1.0
 
 Initial release, includes 3 functions:  
 
