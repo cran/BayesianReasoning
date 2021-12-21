@@ -5,47 +5,72 @@
 \title{.plot_overlay_area}
 \usage{
 .plot_overlay_area(
-  PPV_melted,
-  uncertainty_prevalence = "low",
-  Min_Prevalence,
-  Max_Prevalence,
-  Sensitivity,
-  Min_FP = 0,
-  Max_FP,
-  overlay_labels = "",
   PPV_NPV = "PPV",
+  one_out_of = TRUE,
+  min_Prevalence,
+  max_Prevalence,
+  min_FP = 0,
+  max_FP,
+  max_FN,
+  min_FN,
+  PPV_melted,
+  steps_matrix = 100,
+  decimals_x,
+  decimals_y,
+  label_title = "",
+  label_subtitle = "",
+  translated_labels = translated_labels,
+  Language = "en",
+  Sensitivity,
+  Specificity,
+  uncertainty_prevalence = "low",
   overlay_prevalence_1,
   overlay_prevalence_2,
   overlay_position_FP,
   overlay_position_FN,
-  decimals_x,
-  decimals_y,
-  prevalence_label,
-  legend_label,
-  label_title,
-  label_subtitle,
-  x_axis_label,
-  y_axis_label
+  overlay_labels = "",
+  overlay_extra_info = FALSE,
+  ...
 )
 }
 \arguments{
+\item{PPV_NPV}{.}
+
+\item{one_out_of}{.}
+
+\item{min_Prevalence}{[x] out of y prevalence of disease}
+
+\item{max_Prevalence}{x out of [y] prevalence of disease}
+
+\item{min_FP}{.}
+
+\item{max_FP}{.}
+
+\item{max_FN}{.}
+
+\item{min_FN}{.}
+
 \item{PPV_melted}{.}
 
-\item{uncertainty_prevalence}{.}
+\item{steps_matrix}{.}
 
-\item{Min_Prevalence}{[x] out of y prevalence of disease}
+\item{decimals_x}{.}
 
-\item{Max_Prevalence}{x out of [y] prevalence of disease}
+\item{decimals_y}{.}
+
+\item{label_title}{.}
+
+\item{label_subtitle}{.}
+
+\item{translated_labels}{.}
+
+\item{Language}{.}
 
 \item{Sensitivity}{.}
 
-\item{Min_FP}{.}
+\item{Specificity}{.}
 
-\item{Max_FP}{.}
-
-\item{overlay_labels}{.}
-
-\item{PPV_NPV}{.}
+\item{uncertainty_prevalence}{.}
 
 \item{overlay_prevalence_1}{[x] out of y prevalence of disease for the overlay}
 
@@ -55,21 +80,11 @@
 
 \item{overlay_position_FN}{.}
 
-\item{decimals_x}{.}
+\item{overlay_labels}{vector with labels for each overlay point}
 
-\item{decimals_y}{.}
+\item{overlay_extra_info}{show extra info in overlay? [TRUE/FALSE]}
 
-\item{prevalence_label}{.}
-
-\item{legend_label}{.}
-
-\item{label_title}{.}
-
-\item{label_subtitle}{.}
-
-\item{x_axis_label}{.}
-
-\item{y_axis_label}{.}
+\item{...}{.}
 }
 \description{
 Add area overlay to PPV_heatmap plot

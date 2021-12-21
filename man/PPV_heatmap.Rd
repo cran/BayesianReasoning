@@ -5,40 +5,51 @@
 \title{Plot PPV and NPV heatmaps}
 \usage{
 PPV_heatmap(
-  Min_Prevalence = 1,
-  Max_Prevalence = 1000,
-  Sensitivity = 95,
-  Min_FP = 0,
-  Max_FP = 10,
+  min_Prevalence = 1,
+  max_Prevalence = 1000,
+  Sensitivity = NULL,
+  Specificity = NULL,
+  limits_Sensitivity = NULL,
+  limits_Specificity = NULL,
+  one_out_of = FALSE,
   overlay = "no",
   overlay_labels = "",
-  overlay_position_FP = 1,
-  overlay_position_FN = 1,
-  overlay_prevalence_1 = 1,
-  overlay_prevalence_2 = 100,
+  overlay_extra_info = FALSE,
+  overlay_position_FP = NULL,
+  overlay_position_FN = NULL,
+  overlay_prevalence_1 = NULL,
+  overlay_prevalence_2 = NULL,
   uncertainty_prevalence = "high",
   label_title = "",
   label_subtitle = "",
   Language = "en",
   folder = "",
   PPV_NPV = "PPV",
-  DEBUG = 0
+  steps_matrix = 100,
+  DEBUG = FALSE,
+  ...
 )
 }
 \arguments{
-\item{Min_Prevalence}{x in the "x out of y" prevalence (y-axis): [1-Inf]}
+\item{min_Prevalence}{x in the "x out of y" prevalence (y-axis): [1-Inf]}
 
-\item{Max_Prevalence}{y in the "x out of y" prevalence (y-axis): [1-Inf]}
+\item{max_Prevalence}{y in the "x out of y" prevalence (y-axis): [1-Inf]}
 
 \item{Sensitivity}{Sensitivity of the test: [0-100]}
 
-\item{Min_FP}{Minimum False Positives ratio to show in plot (x-axis): [1-100]}
+\item{Specificity}{Specificity of the test: [0-100]}
 
-\item{Max_FP}{Maximum False Positives ratio to show in plot (x-axis): [1-100]}
+\item{limits_Sensitivity}{c(min Sensitivity, max Sensitivity)}
 
-\item{overlay}{Show overlay: [TRUE, FALSE]}
+\item{limits_Specificity}{c(min Specificity, max Specificity)}
+
+\item{one_out_of}{Show y scale as 1 out of x [TRUE, FALSE] FALSE by default}
+
+\item{overlay}{Type of overlay: ["line", "area"]}
 
 \item{overlay_labels}{Labels for each point in the overlay. For example: c("80", "70", "60", "50", "40", "30", "20  y.o.")}
+
+\item{overlay_extra_info}{show extra info in overlay? [TRUE/FALSE]}
 
 \item{overlay_position_FP}{FP value (position in the x-axis) for each point in the overlay. For example: c(7, 8, 9, 12, 14, 14)}
 
@@ -58,9 +69,13 @@ PPV_heatmap(
 
 \item{folder}{Where to save the plot (the filename would be automatically created using the plot parameters)}
 
-\item{PPV_NPV}{Should show PPV or NPV [PPV/NPV]}
+\item{PPV_NPV}{Should show PPV or NPV ["PPV", "NPV"]}
 
-\item{DEBUG}{Shows debug warnings [0/1]}
+\item{steps_matrix}{with of PPV/NPV matrix. 100 by default}
+
+\item{DEBUG}{Shows debug warnings [TRUE/FALSE]}
+
+\item{...}{.}
 }
 \value{
 Shows a plot or, if given a folder argument, saves a .png version of the plot
@@ -69,9 +84,9 @@ Shows a plot or, if given a folder argument, saves a .png version of the plot
 Plot heatmaps showing the PPV for a given Sensitivity and a range of Prevalences and False Positive values or NPV values for a given Specificity and a range of Prevalences and True Positive values
 }
 \examples{
-PPV_heatmap(Min_Prevalence = 1, 
-Max_Prevalence = 1000, 
+PPV_heatmap(min_Prevalence = 1, 
+max_Prevalence = 1000, 
 Sensitivity = 100, 
-Max_FP = 2, 
+Specificity = 98, 
 Language = "en")
 }

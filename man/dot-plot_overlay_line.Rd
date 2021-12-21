@@ -5,42 +5,61 @@
 \title{.plot_overlay_line}
 \usage{
 .plot_overlay_line(
+  PPV_NPV = "PPV",
+  one_out_of = TRUE,
+  min_Prevalence,
+  max_Prevalence,
+  min_FP = 0,
+  max_FP,
+  max_FN,
+  min_FN,
   PPV_melted,
+  steps_matrix = 100,
+  decimals_x,
+  decimals_y,
+  label_title = "",
+  label_subtitle = "",
+  translated_labels = translated_labels,
   uncertainty_prevalence = "low",
-  PPV_NPV,
-  Min_Prevalence,
-  Max_Prevalence,
-  Max_FP,
-  Sensitivity,
   overlay_prevalence_1,
   overlay_prevalence_2,
   overlay_position_FP,
   overlay_position_FN,
-  overlay_labels,
-  label_title,
-  label_subtitle,
-  legend_label,
-  decimals_x,
-  decimals_y,
-  prevalence_label,
-  x_axis_label,
-  y_axis_label
+  overlay_labels = ""
 )
 }
 \arguments{
-\item{PPV_melted}{DF}
-
-\item{uncertainty_prevalence}{How big the uncertainty area should be: ["low" or "high"]}
-
 \item{PPV_NPV}{.}
 
-\item{Min_Prevalence}{[x] out of y prevalence of disease}
+\item{one_out_of}{.}
 
-\item{Max_Prevalence}{x out of [y] prevalence of disease}
+\item{min_Prevalence}{[x] out of y prevalence of disease}
 
-\item{Max_FP}{.}
+\item{max_Prevalence}{x out of [y] prevalence of disease}
 
-\item{Sensitivity}{.}
+\item{min_FP}{.}
+
+\item{max_FP}{.}
+
+\item{max_FN}{.}
+
+\item{min_FN}{.}
+
+\item{PPV_melted}{DF}
+
+\item{steps_matrix}{.}
+
+\item{decimals_x}{.}
+
+\item{decimals_y}{.}
+
+\item{label_title}{.}
+
+\item{label_subtitle}{.}
+
+\item{translated_labels}{.}
+
+\item{uncertainty_prevalence}{How big the uncertainty area should be: ["low" or "high"]}
 
 \item{overlay_prevalence_1}{vector with [x] out of y prevalence of disease}
 
@@ -51,22 +70,6 @@
 \item{overlay_position_FN}{.}
 
 \item{overlay_labels}{vector with labels for each overlay point}
-
-\item{label_title}{.}
-
-\item{label_subtitle}{.}
-
-\item{legend_label}{.}
-
-\item{decimals_x}{.}
-
-\item{decimals_y}{.}
-
-\item{prevalence_label}{.}
-
-\item{x_axis_label}{.}
-
-\item{y_axis_label}{.}
 }
 \description{
 Add line overlay to PPV_heatmap plot

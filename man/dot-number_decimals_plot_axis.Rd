@@ -6,28 +6,28 @@
 \usage{
 .number_decimals_plot_axis(
   PPV_NPV = "PPV",
-  Min_FP = 0,
-  Max_FP,
-  Min_FN,
-  Max_FN,
-  Min_Prevalence,
-  Max_Prevalence
+  min_FP = 0,
+  max_FP,
+  min_FN,
+  max_FN,
+  min_Prevalence,
+  max_Prevalence
 )
 }
 \arguments{
 \item{PPV_NPV}{.}
 
-\item{Min_FP}{.}
+\item{min_FP}{.}
 
-\item{Max_FP}{.}
+\item{max_FP}{.}
 
-\item{Min_FN}{.}
+\item{min_FN}{.}
 
-\item{Max_FN}{.}
+\item{max_FN}{.}
 
-\item{Min_Prevalence}{[x] out of y prevalence of disease}
+\item{min_Prevalence}{[x] out of y prevalence of disease}
 
-\item{Max_Prevalence}{x out of [y] prevalence of disease}
+\item{max_Prevalence}{x out of [y] prevalence of disease}
 }
 \description{
 The number of decimal places in the x and y axis label depends on how wide the range is.

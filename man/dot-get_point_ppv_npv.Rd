@@ -7,16 +7,17 @@
 .get_point_ppv_npv(
   PPV_melted,
   PPV_NPV = "PPV",
+  Language,
   Sensitivity,
+  Specificity,
   overlay_prevalence_1,
   overlay_prevalence_2,
   overlay_labels,
+  overlay_extra_info = FALSE,
   overlay_position_FP,
   overlay_position_FN,
   point_Prevalence,
-  prevalence_label,
-  x_axis_label,
-  y_axis_label,
+  translated_labels,
   decimals_x,
   decimals_y
 )
@@ -26,13 +27,19 @@
 
 \item{PPV_NPV}{Should calculate PPV or NPV?}
 
+\item{Language}{["en" / "es"]}
+
 \item{Sensitivity}{Sensitivity of the test}
+
+\item{Specificity}{Specificity of the test}
 
 \item{overlay_prevalence_1}{[x] out of y prevalence of disease}
 
 \item{overlay_prevalence_2}{x out of [y] prevalence of disease}
 
-\item{overlay_labels}{.}
+\item{overlay_labels}{vector with labels for each overlay point}
+
+\item{overlay_extra_info}{show extra info in overlay? [TRUE/FALSE]}
 
 \item{overlay_position_FP}{.}
 
@@ -40,11 +47,7 @@
 
 \item{point_Prevalence}{.}
 
-\item{prevalence_label}{.}
-
-\item{x_axis_label}{.}
-
-\item{y_axis_label}{.}
+\item{translated_labels}{.}
 
 \item{decimals_x}{.}
 

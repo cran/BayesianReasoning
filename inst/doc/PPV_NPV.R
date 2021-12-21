@@ -2,9 +2,9 @@
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  # dpi=300,
-  fig.height = 7,
-  fig.width=10
+  dpi = 60,
+  fig.height = 10,
+  fig.width = 14
 )
 
 ## ---- echo = FALSE, message = FALSE, results = 'hide'-------------------------
@@ -14,27 +14,26 @@ library(patchwork)
 ## -----------------------------------------------------------------------------
 
   PPV_plot = PPV_heatmap(
-    Min_Prevalence = 1,
-    Max_Prevalence = 80,
+    min_Prevalence = 1, max_Prevalence = 80, 
     Sensitivity = 95,
-    Max_FP = 15,
+    limits_Specificity = c(85, 100),
     overlay = "area",
     overlay_prevalence_1 = 1,
     overlay_prevalence_2 = 69,
     overlay_position_FP = 12.1,
     label_title = "PPV",
     label_subtitle = "Screening test"
-  )
+  )    
+
 
 
 ## -----------------------------------------------------------------------------
 
   NPV_plot = PPV_heatmap(
     PPV_NPV = "NPV",
-    Min_Prevalence = 1,
-    Max_Prevalence = 80,
-    Sensitivity = 90,
-    Max_FP = 12.1,
+    min_Prevalence = 1,
+    max_Prevalence = 80,
+    Specificity = 87.9,
     overlay = "area",
     overlay_prevalence_1 = 1,
     overlay_prevalence_2 = 69,
@@ -44,7 +43,7 @@ library(patchwork)
   )
 
 
-## ---- fig.height = 12, fig.width=10-------------------------------------------
+## ---- fig.height = 14, fig.width = 12-----------------------------------------
 
   (PPV_plot / NPV_plot) +  plot_layout(guides = 'collect')
 
