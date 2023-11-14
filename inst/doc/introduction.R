@@ -10,7 +10,7 @@ knitr::opts_chunk$set(
   fig.width = 14
 )
 
-## ---- echo = FALSE, message = FALSE, results = 'hide'-------------------------
+## ----echo = FALSE, message = FALSE, results = 'hide'--------------------------
 library(BayesianReasoning)
 
 # FROM: https://community.rstudio.com/t/internet-resources-should-fail-gracefully/49199/12
@@ -136,4 +136,32 @@ PPV_diagnostic_vs_screening(max_FP = 10,
                             prevalence_screening_group = 1000, 
                             prevalence_diagnostic_group = 2)
                             
+
+## ----cutoff-------------------------------------------------------------------
+
+PLOTS = plot_cutoff(prevalence = 0.2,
+                    cutoff_point = 33, 
+                    mean_sick = 35, 
+                    mean_healthy = 20, 
+                    sd_sick = 3, 
+                    sd_healthy = 5
+                    )
+
+PLOTS$final_plot
+                            
+
+## ----remove-cutoff------------------------------------------------------------
+
+# Sensitivity
+remove_layers_cutoff_plot(PLOTS$final_plot, delete_what = c("FP", "TN")) + ggplot2::labs(subtitle = "Sensitivity = TP/(TP+FN)")
+
+# Specificity
+remove_layers_cutoff_plot(PLOTS$final_plot, delete_what = c("FN", "TP")) + ggplot2::labs(subtitle = "Specificity = TN/(TN+FP)")
+
+# PPV
+remove_layers_cutoff_plot(PLOTS$final_plot, delete_what = c("TN", "FN")) + ggplot2::labs(subtitle = "PPV = TP/(TP+FP)")
+
+# NPV
+remove_layers_cutoff_plot(PLOTS$final_plot, delete_what = c("TP", "FP")) + ggplot2::labs(subtitle = "NPV = TN/(TN+FN)")
+
 

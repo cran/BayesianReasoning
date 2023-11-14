@@ -7,7 +7,7 @@ knitr::opts_chunk$set(
   fig.width = 14
 )
 
-## ---- echo = FALSE, message = FALSE, results = 'hide'-------------------------
+## ----echo = FALSE, message = FALSE, results = 'hide'--------------------------
 library(BayesianReasoning)
 library(patchwork)
 
@@ -43,7 +43,7 @@ library(patchwork)
   )
 
 
-## ---- fig.height = 14, fig.width = 12-----------------------------------------
+## ----fig.height = 14, fig.width = 12------------------------------------------
 
   (PPV_plot / NPV_plot) +  plot_layout(guides = 'collect')
 
